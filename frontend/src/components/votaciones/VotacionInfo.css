@@ -1,0 +1,57 @@
+.votacion-info-section {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+}
+
+.votacion-descripcion {
+  margin-bottom: var(--spacing-lg);
+}
+
+.votacion-descripcion h2 {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-gray-light);
+  padding-bottom: var(--spacing-xs);
+}
+
+.votacion-descripcion p {
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+}
+
+.votacion-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+}
+
+.votacion-fechas, .votacion-datos {
+  flex: 1;
+  min-width: 250px;
+}
+
+.fecha-item, .dato-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.fecha-label, .dato-label {
+  font-weight: 500;
+  color: var(--color-gray-dark);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+}
+
+.fecha-valor, .dato-valor {
+  color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+  .votacion-meta {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+} 

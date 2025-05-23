@@ -1,0 +1,16 @@
+/* Estilos específicos para la gestión de viviendas */
+@import './AdminCommon.css';
+
+/* Colores para el estado de coeficientes */
+:root {
+  --color-success-bg: rgba(76, 175, 80, 0.15);
+  --color-error-bg: rgba(244, 67, 54, 0.15);
+}
+
+/* Estilos para la información de coeficientes */
+.coeficiente-info {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: normal;
+}
+/* Estilos específicos para la gestión de viviendas */

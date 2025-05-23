@@ -1,0 +1,241 @@
+.informe-participacion {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.informe-header {
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-light);
+  padding-bottom: var(--spacing-md);
+}
+
+.informe-header h2 {
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-primary-dark);
+}
+
+.informe-header p {
+  margin: var(--spacing-xs) 0;
+  color: var(--color-gray-dark);
+}
+
+.informe-resumen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.resumen-card {
+  background-color: var(--color-gray-lightest);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);
+  min-width: 100px;
+  flex: 1;
+  text-align: center;
+  box-shadow: var(--shadow-xs);
+}
+
+.resumen-valor {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.resumen-texto {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark);
+}
+
+.resumen-card.a-favor {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.resumen-card.a-favor .resumen-valor {
+  color: var(--color-success);
+}
+
+.resumen-card.en-contra {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.resumen-card.en-contra .resumen-valor {
+  color: var(--color-error);
+}
+
+.resumen-card.abstencion {
+  background-color: rgba(241, 196, 15, 0.1);
+}
+
+.resumen-card.abstencion .resumen-valor {
+  color: #f39c12;
+}
+
+.informe-filtros {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.informe-filtros label {
+  font-weight: 500;
+}
+
+.informe-filtros select {
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-gray-light);
+  background-color: var(--color-white);
+  min-width: 200px;
+}
+
+.informe-tabla-container {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+.informe-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.informe-tabla th {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  text-align: left;
+  padding: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.informe-tabla td {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.informe-tabla tr:hover {
+  background-color: var(--color-gray-lightest);
+}
+
+.estado-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.estado-badge.a-favor {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: var(--color-success);
+}
+
+.estado-badge.en-contra {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: var(--color-error);
+}
+
+.estado-badge.abstencion {
+  background-color: rgba(241, 196, 15, 0.15);
+  color: #f39c12;
+}
+
+.estado-badge.sin-derecho-voto {
+  background-color: rgba(189, 195, 199, 0.15);
+  color: #7f8c8d;
+}
+
+.estado-badge.no-voto {
+  background-color: rgba(149, 165, 166, 0.15);
+  color: #7f8c8d;
+}
+
+.estado-badge.otro-voto {
+  background-color: rgba(52, 152, 219, 0.15);
+  color: var(--color-primary);
+}
+
+tr.a-favor {
+  background-color: rgba(46, 204, 113, 0.05);
+}
+
+tr.en-contra {
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+tr.abstencion {
+  background-color: rgba(241, 196, 15, 0.05);
+}
+
+tr.sin-derecho-voto {
+  background-color: rgba(189, 195, 199, 0.05);
+}
+
+tr.no-voto {
+  background-color: rgba(149, 165, 166, 0.05);
+}
+
+.informe-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.no-resultados {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-gray);
+  padding: var(--spacing-md) !important;
+}
+
+.informe-loading, .informe-error, .informe-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para impresión */
+@media print {
+  .informe-participacion {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .informe-filtros, .informe-acciones {
+    display: none;
+  }
+  
+  .informe-tabla th {
+    background-color: #f1f1f1 !important;
+    color: #333 !important;
+  }
+  
+  .informe-tabla {
+    font-size: 10pt;
+  }
+} 

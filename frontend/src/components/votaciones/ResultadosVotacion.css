@@ -1,0 +1,313 @@
+.resultados-votacion {
+  width: 100%;
+}
+
+.resultados-no-disponibles {
+  text-align: center;
+  padding: var(--spacing-md);
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+.resultados-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--color-error);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin: var(--spacing-md) 0;
+  text-align: center;
+}
+
+.resultados-resumen {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.resumen-item {
+  flex: 1;
+  min-width: 100px;
+  padding: var(--spacing-md);
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.resumen-item.ganadora {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.resumen-valor {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.resumen-item.ganadora .resumen-valor {
+  color: var(--color-success);
+}
+
+.resumen-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark);
+}
+
+.resultados-grafico {
+  margin-bottom: var(--spacing-xl);
+}
+
+.resultado-opcion {
+  margin-bottom: var(--spacing-md);
+}
+
+.resultado-opcion.ganadora .opcion-texto {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.opcion-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+}
+
+.opcion-texto {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.opcion-votos {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark);
+}
+
+.opcion-barra-contenedor {
+  height: 10px;
+  background-color: var(--color-gray-light);
+  border-radius: var(--border-radius-pill);
+  overflow: hidden;
+}
+
+.opcion-barra {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-pill);
+  transition: width var(--transition-normal);
+}
+
+.resultados-grafico-moderno {
+  margin-bottom: var(--spacing-xl);
+}
+
+.resultado-opcion-moderna {
+  margin-bottom: 2rem;
+}
+
+.resultado-opcion-moderna.ganadora .opcion-texto-moderna {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.opcion-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.opcion-texto-moderna {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+}
+
+.opcion-barra-contenedor-moderna {
+  height: 40px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.opcion-barra-moderna {
+  height: 100%;
+  border: 4px solid transparent;
+  min-width: 60px;
+  border-radius: 20px;
+  transition: width 1s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.opcion-porcentaje {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.opcion-datos-moderna {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+}
+
+.opcion-valor {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-gray-dark);
+}
+
+.resultados-metadatos {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.resultados-metadatos h3 {
+  font-size: var(--font-size-md);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.metadato-item {
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.metadato-clave {
+  font-weight: 500;
+  color: var(--color-gray-dark);
+}
+
+.metadato-valor {
+  color: var(--color-dark);
+}
+
+/* Estilos para el mensaje de resultado de la votación */
+.resultado-votacion-mensaje {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.resultado-votacion-mensaje.aprobada {
+  background-color: rgba(46, 204, 113, 0.15);
+  border-left: 6px solid var(--color-success);
+}
+
+.resultado-votacion-mensaje.rechazada {
+  background-color: rgba(231, 76, 60, 0.15);
+  border-left: 6px solid var(--color-error);
+}
+
+.resultado-votacion-mensaje.sin_acuerdo {
+  background-color: rgba(189, 195, 199, 0.15);
+  border-left: 6px solid #bdc3c7;
+}
+
+.resultado-votacion-mensaje.empate {
+  background-color: rgba(241, 196, 15, 0.15);
+  border-left: 6px solid var(--color-warning);
+}
+
+.resultado-votacion-mensaje.no_determinado {
+  background-color: rgba(52, 152, 219, 0.15);
+  border-left: 6px solid var(--color-primary);
+}
+
+.resultado-votacion-mensaje.postergada {
+  background-color: rgba(155, 89, 182, 0.15);
+  border-left: 6px solid #9b59b6;
+}
+
+.resultados-votacion .resultado-icono {
+  font-size: 1.8rem;
+}
+
+.resultados-votacion .resultado-texto {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.resultado-detalle {
+  font-size: 0.9rem;
+  color: var(--color-gray-dark);
+  margin-top: 0.5rem;
+}
+
+/* Estilos para el mensaje cuando no hay participación */
+.votacion-sin-participacion-message {
+  width: 100%;
+}
+
+.votacion-sin-participacion-message .info-adicional {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.votacion-sin-participacion-message .info-adicional p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.votacion-sin-participacion-message .info-adicional ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.votacion-sin-participacion-message .info-adicional li {
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .resultados-resumen {
+    flex-direction: column;
+  }
+  
+  .resumen-item {
+    min-width: 100%;
+  }
+  
+  .opcion-info {
+    flex-direction: column;
+  }
+  
+  .opcion-barra-contenedor-moderna {
+    height: 30px;
+  }
+  
+  .opcion-porcentaje {
+    font-size: 1rem;
+  }
+  
+  .resultado-votacion-mensaje {
+    padding: 1rem;
+  }
+  
+  .resultados-votacion .resultado-icono {
+    font-size: 1.5rem;
+  }
+  
+  .resultados-votacion .resultado-texto {
+    font-size: 1rem;
+  }
+} 

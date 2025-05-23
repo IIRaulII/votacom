@@ -1,0 +1,86 @@
+.votacion-resultados-section {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+}
+
+.votacion-resultados-section h2 {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-light);
+  padding-bottom: var(--spacing-xs);
+}
+
+.votacion-sin-participacion-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.resultado-votacion-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  width: 100%;
+}
+
+.resultado-votacion-mensaje.postergada {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.votacion-resultados-section .resultado-icono {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.votacion-resultados-section .resultado-texto {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.resultado-detalle {
+  color: var(--color-gray-dark);
+}
+
+.info-adicional {
+  width: 100%;
+  max-width: 600px;
+  margin-top: var(--spacing-md);
+}
+
+.info-adicional p {
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-adicional ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: var(--spacing-md);
+}
+
+.info-adicional li {
+  margin-bottom: 5px;
+  color: var(--color-gray-dark);
+}
+
+.votacion-nota {
+  margin-bottom: 15px; 
+  padding: 10px; 
+  background-color: #fff3cd; 
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+}
+
+.votacion-nota p {
+  margin: 0;
+} 

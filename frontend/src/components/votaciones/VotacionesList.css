@@ -1,0 +1,194 @@
+.votaciones-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.votacion-item {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.votacion-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.votacion-status {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.status-activa {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: var(--color-success);
+}
+
+.status-pendiente {
+  background-color: rgba(52, 152, 219, 0.2);
+  color: var(--color-info);
+}
+
+.status-finalizada {
+  background-color: rgba(149, 165, 166, 0.2);
+  color: var(--color-gray-dark);
+}
+
+.votacion-titulo {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary-dark);
+  padding-right: 80px; /* Espacio para el estado */
+}
+
+.votacion-descripcion {
+  color: var(--color-gray-dark);
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.votacion-fechas {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.fecha-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.fecha-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.fecha-valor {
+  font-size: var(--font-size-sm);
+}
+
+.votacion-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.meta-valor {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.votacion-actions {
+  margin-top: var(--spacing-sm);
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-gray);
+  font-style: italic;
+  padding: var(--spacing-lg);
+}
+
+/* Estilos para los resultados de votación */
+.votacion-resultado {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.resultado-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-pill);
+  font-weight: 600;
+  width: 100%;
+}
+
+.votaciones-list .resultado-icono {
+  font-size: 1.2rem;
+}
+
+.votaciones-list .resultado-texto {
+  font-size: 1.3rem;
+}
+
+.resultado-aprobada {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: var(--color-success);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.resultado-rechazada {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: var(--color-error);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.resultado-sin-acuerdo {
+  background-color: rgba(189, 195, 199, 0.15);
+  color: #7f8c8d;
+  border: 1px solid rgba(189, 195, 199, 0.3);
+}
+
+.resultado-empate {
+  background-color: rgba(241, 196, 15, 0.15);
+  color: #f39c12;
+  border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+.resultado-postergada {
+  background-color: rgba(155, 89, 182, 0.15);
+  color: #9b59b6;
+  border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.resultado-pendiente {
+  background-color: rgba(52, 152, 219, 0.15);
+  color: var(--color-primary);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.resultado-activa {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #22e622;
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .votaciones-list {
+    grid-template-columns: 1fr;
+  }
+} 

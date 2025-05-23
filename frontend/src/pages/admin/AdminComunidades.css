@@ -1,0 +1,106 @@
+/* Estilos específicos para la gestión de comunidades */
+@import './AdminCommon.css';
+
+/* Estilos para el código de comunidad */
+.codigo-comunidad {
+  display: inline-block;
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* Estilos para el modal de comunidades */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalFadeIn 0.3s ease-in-out;
+  padding: 12px;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-gray);
+  transition: color var(--transition-fast);
+}
+
+.btn-close:hover {
+  color: var(--color-error);
+}
+
+/* Estilos para el formulario de comunidades */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+} 

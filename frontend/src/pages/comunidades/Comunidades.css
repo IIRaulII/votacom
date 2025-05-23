@@ -1,0 +1,210 @@
+.comunidades-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.comunidades-page.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.comunidades-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.comunidades-header h1 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.comunidades-header p {
+  color: var(--color-gray-dark);
+  font-size: var(--font-size-lg);
+}
+
+.comunidades-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--color-error);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.comunidades-success {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--color-success);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.comunidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.comunidad-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.comunidad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.comunidad-card h3 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary-dark);
+}
+
+.comunidad-direccion {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray);
+  flex-grow: 1;
+}
+
+.empty-comunidades {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.empty-comunidades p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-dark);
+}
+
+.empty-actions,
+.superadmin-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.comunidades-footer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  color: var(--color-gray);
+  border-top: 1px solid var(--color-gray-light);
+  padding-top: var(--spacing-lg);
+}
+
+.footer-actions {
+  margin-top: var(--spacing-md);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.btn-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Formulario para unirse */
+.unirse-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl);
+}
+
+.unirse-form .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.unirse-form label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.unirse-form input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-lg);
+  letter-spacing: 1px;
+}
+
+.unirse-form input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-text {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-dark);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .comunidades-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+/* Código de comunidad */
+.codigo-comunidad {
+  display: inline-block;
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-family: monospace;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* Estilos para acciones después de unirse con éxito */
+.success-actions {
+  text-align: center;
+  padding: var(--spacing-md) 0;
+}
+
+.success-actions p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  color: var(--color-success);
+} 

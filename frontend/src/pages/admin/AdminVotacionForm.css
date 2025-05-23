@@ -1,0 +1,235 @@
+/* Estilos específicos para el formulario de votaciones */
+@import './AdminCommon.css';
+
+/* Formularios */
+.admin-form-container {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.form-section {
+  border-bottom: 1px solid var(--color-gray-light);
+  padding-bottom: var(--spacing-lg);
+}
+
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.form-section h2 {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-section h3 {
+  font-size: var(--font-size-md);
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Estilos de formulario básicos */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="datetime-local"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-md);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin: 0;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+}
+
+.form-text {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* Estilos para opciones de votación */
+.opcion-form-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.opcion-input-group {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.opcion-input-group input {
+  flex: 1;
+}
+
+/* Estilos para configuración rápida */
+.votacion-rapida {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.botones-tiempo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.btn-outline {
+  background-color: white;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tip {
+  font-size: 0.85rem;
+  color: var(--color-gray-dark);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Botón de texto */
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.btn-text:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Acciones de formulario */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .botones-tiempo {
+    flex-direction: column;
+  }
+  
+  .botones-tiempo button {
+    width: 100%;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+/* Estilos específicos para los botones de opciones */
+.botones-opciones .btn-outline {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.botones-opciones .btn-outline:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+/* Estilos específicos para el contenedor de opciones */
+.votacion-rapida.opciones-predefinidas {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.2);
+} 

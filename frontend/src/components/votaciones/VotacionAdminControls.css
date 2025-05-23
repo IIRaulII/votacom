@@ -1,0 +1,62 @@
+.votacion-nota-admin {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.votacion-nota-admin p {
+  color: #856404;
+  margin: 0;
+}
+
+.mt-2 {
+  margin-top: 12px;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-warning:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Estilos para la sección de informe de participación */
+.votacion-informe-section {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.votacion-informe-section .informe-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.votacion-informe-section .informe-header h2 {
+  color: var(--color-primary-dark);
+  margin-bottom: 0;
+}
+
+.votacion-informe-section .informe-header p {
+  color: var(--color-gray);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+.votacion-informe-section .informe-header button {
+  align-self: flex-start;
+} 

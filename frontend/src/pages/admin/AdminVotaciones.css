@@ -1,0 +1,124 @@
+/* Estilos específicos para la gestión de votaciones */
+@import './AdminCommon.css';
+
+/* Estilos para los estados de votaciones */
+.estado-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.estado-badge.activa {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--color-success);
+}
+
+.estado-badge.pendiente {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--color-info);
+}
+
+.estado-badge.finalizada {
+  background-color: rgba(149, 165, 166, 0.1);
+  color: var(--color-gray-dark);
+}
+
+/* Estilos para mensajes de advertencia */
+.text-warning {
+  color: #e67e22;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* Estilos para el botón de texto */
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.btn-text:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Estilos para el modal de confirmación de eliminación */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalFadeIn 0.3s ease-in-out;
+  padding: 12px;
+}
+
+.confirmation-modal {
+  max-width: 400px;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+}
+
+.modal-body {
+  padding: var(--spacing-md);
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-gray);
+  transition: color var(--transition-fast);
+}
+
+.btn-close:hover {
+  color: var(--color-error);
+}
+
+/* Estilos para acciones de formularios */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+} 
