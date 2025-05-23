@@ -147,9 +147,9 @@ const AdminVotacionFormPage = () => {
     const fechaInicioLocal = new Date(formData.fechaInicio);
     const fechaFinLocal = new Date(formData.fechaFin);
     
-    // Convertir fechas locales a UTC ISO string
-    const fechaInicioUTC = new Date(fechaInicioLocal.getTime() - fechaInicioLocal.getTimezoneOffset() * 60000).toISOString();
-    const fechaFinUTC = new Date(fechaFinLocal.getTime() - fechaFinLocal.getTimezoneOffset() * 60000).toISOString();
+    // Convertir fechas locales a UTC ISO string (sin restar offset manualmente)
+    const fechaInicioUTC = new Date(formData.fechaInicio).toISOString();
+    const fechaFinUTC = new Date(formData.fechaFin).toISOString();
     
     if (fechaFinLocal <= fechaInicioLocal) {
       setError('La fecha de fin debe ser posterior a la fecha de inicio');
