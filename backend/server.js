@@ -20,12 +20,32 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? 'https://votacom.netlify.app' 
-    : 'http://localhost:5173',
-  credentials: true
-}));
+
+// Configuración de CORS más flexible
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Permitir requests sin origin (como aplicaciones móviles)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = [
+      'https://votacom.netlify.app',
+      'http://localhost:5173',
+      'http://localhost:3000',
+      'http://localhost:4173'
+    ];
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido por CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+
+app.use(cors(corsOptions));
 
 // Servir archivos estáticos
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
