@@ -21,32 +21,9 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// Configuración de CORS más permisiva para desarrollo y producción
+// Configuración de CORS simplificada y robusta
 const corsOptions = {
-  origin: function (origin, callback) {
-    // En desarrollo, permitir todos los orígenes
-    if (process.env.NODE_ENV === 'development') {
-      return callback(null, true);
-    }
-    
-    // En producción, permitir requests sin origin y orígenes específicos
-    if (!origin) return callback(null, true);
-    
-    const allowedOrigins = [
-      'https://votacom.netlify.app',
-      'https://votacom.netlify.app/',
-      'http://localhost:5173',
-      'http://localhost:3000',
-      'http://localhost:4173'
-    ];
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.log('CORS blocked origin:', origin);
-      callback(null, true); // Temporalmente permitir todos los orígenes
-    }
-  },
+  origin: true, // Permitir todos los orígenes temporalmente
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
