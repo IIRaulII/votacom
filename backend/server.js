@@ -45,6 +45,7 @@ app.use('/api/viviendas', require('./routes/viviendaRoutes'));
 app.use('/api/votaciones', require('./routes/votacionRoutes'));
 app.use('/api/comunidades', require('./routes/comunidadRoutes'));
 app.use('/api/actas', require('./routes/actaRoutes'));
+app.use('/api/facturas', require('./routes/facturaRoutes'));
 
 // Ruta de bienvenida
 app.get('/', (req, res) => {
