@@ -330,6 +330,7 @@ const AdminUsuariosPage = () => {
                     name="nombre"
                     value={formData.nombre}
                     onChange={handleInputChange}
+                    autoComplete="given-name"
                     required
                   />
                 </div>
@@ -342,6 +343,7 @@ const AdminUsuariosPage = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    autoComplete="email"
                     required
                   />
                 </div>

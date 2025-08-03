@@ -213,6 +213,7 @@ const ProfilePage = () => {
                     name="nombre"
                     value={userData.nombre}
                     onChange={handleChange}
+                    autoComplete="given-name"
                     required
                   />
                 </div>
@@ -224,6 +225,7 @@ const ProfilePage = () => {
                     id="email"
                     name="email"
                     value={userData.email}
+                    autoComplete="email"
                     disabled
                   />
                   <small>No puedes cambiar tu email</small>
@@ -237,6 +239,7 @@ const ProfilePage = () => {
                     name="password"
                     value={userData.password}
                     onChange={handleChange}
+                    autoComplete="new-password"
                     placeholder="Dejar en blanco para mantener la actual"
                   />
                   <small>La contraseña debe tener al menos 6 caracteres</small>
@@ -250,6 +253,7 @@ const ProfilePage = () => {
                     name="confirmPassword"
                     value={userData.confirmPassword}
                     onChange={handleChange}
+                    autoComplete="new-password"
                     placeholder="Confirma tu nueva contraseña"
                   />
                 </div>
