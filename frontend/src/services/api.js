@@ -334,4 +334,40 @@ export const actaService = {
   }
 };
 
+export const facturaService = {
+  getAll: async (params = {}) => {
+    const queryParams = new URLSearchParams();
+    
+    // Añadir los parámetros a la URL
+    Object.entries(params).forEach(([key, value]) => {
+      if (value !== undefined && value !== null && value !== '') {
+        queryParams.append(key, value);
+      }
+    });
+    
+    const query = queryParams.toString() ? `?${queryParams.toString()}` : '';
+    const response = await api.get(`${config.ENDPOINTS.FACTURAS}${query}`);
+    return response.data;
+  },
+  
+  getById: async (id) => {
+    const response = await api.get(config.ENDPOINTS.FACTURA(id));
+    return response.data;
+  },
+  
+  create: async (formData) => {
+    const response = await api.post(config.ENDPOINTS.FACTURAS, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    return response.data;
+  },
+  
+  delete: async (id) => {
+    const response = await api.delete(config.ENDPOINTS.FACTURA(id));
+    return response.data;
+  }
+};
+
 export default api; 

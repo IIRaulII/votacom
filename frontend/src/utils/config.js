@@ -36,6 +36,10 @@ const config = {
     // Actas
     ACTAS: '/actas',
     ACTA: (id) => `/actas/${id}`,
+    
+    // Facturas
+    FACTURAS: '/facturas',
+    FACTURA: (id) => `/facturas/${id}`,
   },
   
   // Tiempo de expiración del token en localStorage (milisegundos)
@@ -62,10 +66,13 @@ const config = {
       COMUNIDADES: '/admin/comunidades',
       ACTAS: '/admin/actas',
       NUEVA_ACTA: '/admin/actas/nueva',
+      FACTURAS: '/admin/facturas',
+      NUEVA_FACTURA: '/admin/facturas/nueva',
     },
     SELECCIONAR_COMUNIDAD: '/seleccionar-comunidad',
     UNIRSE_COMUNIDAD: '/unirse-comunidad',
     ACTAS: '/actas',
+    FACTURAS: '/facturas',
   }
 };
 
