@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const fs = require('fs');
 const conectarDB = require('./config/db');
 const errorMiddleware = require('./middlewares/errorMiddleware');
 const config = require('./config/config');
@@ -13,6 +14,34 @@ dotenv.config();
 
 // Conectar a la base de datos
 conectarDB();
+
+// Crear directorios de uploads si no existen
+const createUploadDirectories = () => {
+  const uploadsDir = path.join(__dirname, 'uploads');
+  const actasDir = path.join(uploadsDir, 'actas');
+  const facturasDir = path.join(uploadsDir, 'facturas');
+  
+  // Crear directorio principal de uploads
+  if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+    console.log('Directorio uploads creado');
+  }
+  
+  // Crear directorio de actas
+  if (!fs.existsSync(actasDir)) {
+    fs.mkdirSync(actasDir, { recursive: true });
+    console.log('Directorio uploads/actas creado');
+  }
+  
+  // Crear directorio de facturas
+  if (!fs.existsSync(facturasDir)) {
+    fs.mkdirSync(facturasDir, { recursive: true });
+    console.log('Directorio uploads/facturas creado');
+  }
+};
+
+// Crear directorios
+createUploadDirectories();
 
 // Inicializar Express
 const app = express();
