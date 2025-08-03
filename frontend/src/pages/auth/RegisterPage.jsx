@@ -55,6 +55,7 @@ const RegisterPage = () => {
               type="text"
               id="nombre"
               placeholder="Tu nombre"
+              autoComplete="given-name"
               {...register('nombre', { 
                 required: 'El nombre es obligatorio',
                 minLength: {
@@ -72,6 +73,7 @@ const RegisterPage = () => {
               type="email"
               id="email"
               placeholder="tu.email@ejemplo.com"
+              autoComplete="email"
               {...register('email', { 
                 required: 'El email es obligatorio',
                 pattern: {
@@ -89,6 +91,7 @@ const RegisterPage = () => {
               type="text"
               id="idVivienda"
               placeholder="ID de tu vivienda (si lo conoces)"
+              autoComplete="off"
               {...register('idVivienda')}
             />
             <small className="form-help-text">Si no conoces el ID de tu vivienda, déjalo en blanco. El administrador podrá asignarlo más tarde.</small>
