@@ -19,6 +19,9 @@ import VotacionDetailPage from './pages/votaciones/VotacionDetailPage';
 // Páginas de actas
 import ActasPage from './pages/actas/ActasPage';
 
+// Páginas de facturas
+import FacturasPage from './pages/facturas/FacturasPage';
+
 // Páginas de administración
 import AdminUsuariosPage from './pages/admin/AdminUsuariosPage';
 import AdminViviendasPage from './pages/admin/AdminViviendasPage';
@@ -26,6 +29,7 @@ import AdminVotacionesPage from './pages/admin/AdminVotacionesPage';
 import AdminVotacionFormPage from './pages/admin/AdminVotacionFormPage';
 import AdminComunidadesPage from './pages/admin/AdminComunidadesPage';
 import AdminActaFormPage from './pages/admin/AdminActaFormPage';
+import AdminFacturaFormPage from './pages/admin/AdminFacturaFormPage';
 
 // Páginas de comunidades
 import SeleccionarComunidadPage from './pages/comunidades/SeleccionarComunidadPage';
@@ -52,6 +56,7 @@ function App() {
               <Route path="votaciones" element={<VotacionesPage />} />
               <Route path="votaciones/:id" element={<VotacionDetailPage />} />
               <Route path="actas" element={<ActasPage />} />
+              <Route path="facturas" element={<FacturasPage />} />
               <Route path="dashboard" element={<DashboardPage />} />
               <Route path="perfil" element={<ProfilePage />} />
             </Route>
@@ -64,6 +69,7 @@ function App() {
               <Route path="admin/votaciones/nueva" element={<AdminVotacionFormPage />} />
               <Route path="admin/votaciones/:id/editar" element={<AdminVotacionFormPage />} />
               <Route path="admin/actas/nueva" element={<AdminActaFormPage />} />
+              <Route path="admin/facturas/nueva" element={<AdminFacturaFormPage />} />
             </Route>
             
             {/* Rutas protegidas para superadministradores */}

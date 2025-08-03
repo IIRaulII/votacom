@@ -70,6 +70,16 @@ const Navbar = () => {
                 
                 <li className="navbar-item">
                   <NavLink 
+                    to={config.ROUTES.FACTURAS} 
+                    className={({ isActive }) => isActive ? 'navbar-link active' : 'navbar-link'}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Facturas
+                  </NavLink>
+                </li>
+                
+                <li className="navbar-item">
+                  <NavLink 
                     to={config.ROUTES.DASHBOARD} 
                     className={({ isActive }) => isActive ? 'navbar-link active' : 'navbar-link'}
                     onClick={() => setIsMenuOpen(false)}
@@ -111,6 +121,24 @@ const Navbar = () => {
                             onClick={() => setIsMenuOpen(false)}
                           >
                             Gestión de Votaciones
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink 
+                            to={config.ROUTES.ADMIN.NUEVA_ACTA} 
+                            className="dropdown-item"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            Nueva Acta
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink 
+                            to={config.ROUTES.ADMIN.NUEVA_FACTURA} 
+                            className="dropdown-item"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            Nueva Factura
                           </NavLink>
                         </li>
                         {/* Enlace solo para superadmin */}
