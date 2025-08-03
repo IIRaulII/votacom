@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
+import PDFViewer from '../utils/PDFViewer';
 import './FacturasList.css';
 
 const FacturasList = ({ facturas, onDelete }) => {
   const { user } = useAuthContext();
   const [expandedFactura, setExpandedFactura] = useState(null);
+  const [selectedPDF, setSelectedPDF] = useState(null);
   
   // Verificar si el usuario es admin o superadmin
   const isAdmin = user && (user.rol === 'admin' || user.rol === 'superadmin');
@@ -34,6 +36,15 @@ const FacturasList = ({ facturas, onDelete }) => {
     e.stopPropagation();
     onDelete(id);
   };
+
+  const handleViewPDF = (factura, e) => {
+    e.stopPropagation();
+    const fullUrl = `${import.meta.env.VITE_API_URL.replace('/api', '')}${factura.archivoUrl}`;
+    setSelectedPDF({
+      url: fullUrl,
+      title: factura.titulo
+    });
+  };
   
   return (
     <div className="facturas-list">
@@ -49,15 +60,12 @@ const FacturasList = ({ facturas, onDelete }) => {
               <span className="factura-date">Fecha: {formatDate(factura.fecha)}</span>
             </div>
             <div className="factura-actions">
-              <a 
-                href={`${import.meta.env.VITE_API_URL.replace('/api', '')}${factura.archivoUrl}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
                 className="btn-download"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => handleViewPDF(factura, e)}
               >
                 Ver PDF
-              </a>
+              </button>
               {isAdmin && (
                 <button 
                   className="btn-delete" 
@@ -80,6 +88,14 @@ const FacturasList = ({ facturas, onDelete }) => {
           )}
         </div>
       ))}
+      
+      {selectedPDF && (
+        <PDFViewer
+          fileUrl={selectedPDF.url}
+          title={selectedPDF.title}
+          onClose={() => setSelectedPDF(null)}
+        />
+      )}
     </div>
   );
 };

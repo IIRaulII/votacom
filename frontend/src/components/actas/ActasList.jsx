@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
+import PDFViewer from '../utils/PDFViewer';
 import './ActasList.css';
 
 const ActasList = ({ actas, onDelete }) => {
   const { user } = useAuthContext();
   const [expandedActa, setExpandedActa] = useState(null);
+  const [selectedPDF, setSelectedPDF] = useState(null);
   
   // Verificar si el usuario es admin o superadmin
   const isAdmin = user && (user.rol === 'admin' || user.rol === 'superadmin');
@@ -34,6 +36,15 @@ const ActasList = ({ actas, onDelete }) => {
     e.stopPropagation();
     onDelete(id);
   };
+
+  const handleViewPDF = (acta, e) => {
+    e.stopPropagation();
+    const fullUrl = `${import.meta.env.VITE_API_URL.replace('/api', '')}${acta.archivoUrl}`;
+    setSelectedPDF({
+      url: fullUrl,
+      title: acta.titulo
+    });
+  };
   
   return (
     <div className="actas-list">
@@ -49,15 +60,12 @@ const ActasList = ({ actas, onDelete }) => {
               <span className="acta-date">Fecha: {formatDate(acta.fecha)}</span>
             </div>
             <div className="acta-actions">
-              <a 
-                href={`${import.meta.env.VITE_API_URL.replace('/api', '')}${acta.archivoUrl}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
                 className="btn-download"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => handleViewPDF(acta, e)}
               >
                 Ver PDF
-              </a>
+              </button>
               {isAdmin && (
                 <button 
                   className="btn-delete" 
@@ -80,6 +88,14 @@ const ActasList = ({ actas, onDelete }) => {
           )}
         </div>
       ))}
+      
+      {selectedPDF && (
+        <PDFViewer
+          fileUrl={selectedPDF.url}
+          title={selectedPDF.title}
+          onClose={() => setSelectedPDF(null)}
+        />
+      )}
     </div>
   );
 };
